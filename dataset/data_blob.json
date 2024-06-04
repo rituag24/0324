@@ -5,6 +5,16 @@
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"container": {
+				"type": "string",
+				"defaultValue": "input"
+			},
+			"filename": {
+				"type": "string",
+				"defaultValue": "employee.csv"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {

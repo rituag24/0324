@@ -1,5 +1,5 @@
 {
-	"name": "blob_gem",
+	"name": "copydata_metadata4",
 	"properties": {
 		"activities": [
 			{
@@ -18,7 +18,7 @@
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
+							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
 						},
@@ -27,15 +27,11 @@
 						}
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -49,20 +45,24 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "data_blob",
+						"referenceName": "source_meta",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "gem_data",
-						"type": "DatasetReference"
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference",
+						"parameters": {
+							"sqlschema": "dbo",
+							"sqltablename": "metadata6"
+						}
 					}
 				]
 			}
 		],
 		"annotations": [],
-		"lastPublishTime": "2024-05-30T06:29:51Z"
+		"lastPublishTime": "2024-06-02T14:57:48Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

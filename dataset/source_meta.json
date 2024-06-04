@@ -1,5 +1,5 @@
 {
-	"name": "gem_data",
+	"name": "source_meta",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "metadata5.csv",
+				"fileName": "metadata4.csv",
 				"fileSystem": "input"
 			},
 			"columnDelimiter": ",",
