@@ -1,5 +1,5 @@
 {
-	"name": "source2_data_flow",
+	"name": "source3_dataflow",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "department1.csv",
+				"fileName": "employeea.csv",
 				"fileSystem": "input"
 			},
 			"columnDelimiter": ",",
@@ -20,14 +20,13 @@
 		},
 		"schema": [
 			{
-				"name": "Employee_id",
+				"name": "deptid",
 				"type": "String"
 			},
 			{
-				"name": "job_details",
+				"name": "department",
 				"type": "String"
 			}
 		]
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }
